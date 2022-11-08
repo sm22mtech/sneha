@@ -1,4 +1,4 @@
-#inclue <Arduino.h>
+#include <Arduino.h>
 //Declaring all variables as integers
 int D,C,B,A,a,b,c,d,e,f,g;
 
@@ -13,37 +13,37 @@ void disp_7447(int D, int C, int B, int A)
   f=(B&&!C&&!D) || (A&&!C&&!D) || (A&&B&&!D);
   g=(A&&B&&C&&!D) || (!B&&!C&&!D);
 
-  digitalWrite(6, a);
-  digitalWrite(7, b);
-  digitalWrite(8, c);
-  digitalWrite(9, d);
-  digitalWrite(10, e);
-  digitalWrite(11, f);
-  digitalWrite(12, g);
+  digitalWrite(2, a);
+  digitalWrite(3, b);
+  digitalWrite(4, c);
+  digitalWrite(5, d);
+  digitalWrite(6, e);
+  digitalWrite(7, f);
+  digitalWrite(8, g);
 
 }
 // the setup function runs once when you press reset or power the board
 void setup() {
     
-    pinMode(2, INPUT);
-    pinMode(3, INPUT);
-    pinMode(4, INPUT);
-    pinMode(5, INPUT);
+    pinMode(9, INPUT);
+    pinMode(10, INPUT);
+    pinMode(11, INPUT);
+    pinMode(12, INPUT);
+    pinMode(2, OUTPUT);
+    pinMode(3, OUTPUT);
+    pinMode(4, OUTPUT);
+    pinMode(5, OUTPUT);
     pinMode(6, OUTPUT);
     pinMode(7, OUTPUT);
     pinMode(8, OUTPUT);
-    pinMode(9, OUTPUT);
-    pinMode(10, OUTPUT);
-    pinMode(11, OUTPUT);
-    pinMode(12, OUTPUT);
 }
 
 // the loop function runs over and over again forever
 void loop() {
-A=digitalRead(2);
-B=digitalRead(3);
-C=digitalRead(4);
-D=digitalRead(5);
+A=digitalRead(9);
+B=digitalRead(10);
+C=digitalRead(11);
+D=digitalRead(12);
 disp_7447(D,C,B,A);  
 }
 //&& is the AND operation
